@@ -30,7 +30,6 @@
         if( !empty($_REQUEST['password']) and !empty($_REQUEST['login']) ) {
             $login = $_REQUEST['login'];
             $password = $_REQUEST['password'];
-        }
 
         $query = 'SELECT*FROM admins WHERE username="'.$login.'" AND password="'.$password.'"';
         $result = mysqli_query($link, $query);
@@ -40,6 +39,7 @@
             echo "FUCK YYEA!";
         } else {
             echo "YOU FUCKING LOOSER!";
+        }
         }
     ?>
 </body>
