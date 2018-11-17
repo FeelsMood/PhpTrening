@@ -25,12 +25,6 @@
         $qid = mysqli_query($link, 'SELECT * FROM admins');
         while($row = mysqli_fetch_assoc($qid)) {
                     print($row['username'] . "<br>");
-                    // if($row['username'] == 'name') {
-                    //     print "Done";
-                    // }
-                    // else {
-                    //     print "Error";
-                    // }
                 }
     ?>
 </body>
