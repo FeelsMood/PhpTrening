@@ -27,8 +27,6 @@
 		<input type='submit' value='Login' class="submit">
     </form>
     <?php
-    session_start();
-    echo $_SESSION['test'] = "Сессия - тест";
 
         if( !empty($_REQUEST['password']) and !empty($_REQUEST['login']) ) {
             $login = $_REQUEST['login'];
@@ -47,6 +45,8 @@
 
         	if (!empty($user)) {
         	    echo "FUCK YYEA!";
+                header("Location: adpanel.php");
+                exit;
                 $qid = mysqli_query($link, 'SELECT * FROM admins');
                 while($row = mysqli_fetch_assoc($qid)) {
                     print($row['username'] . "<br>");
