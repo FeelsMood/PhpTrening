@@ -1,12 +1,14 @@
 <?php
     require_once 'connection.php';
 
-    $link = mysqli_connect($host,$user,$password,$database)
-    	or die("Error " . mysqli_error($link));
-	// przygotowanie mysql lepiej robić przed właściwą częścią strony, tak żebyś mógł np przekierować użytkownika gdzie indziej,
-	// później php nie może już tego zrobić :/
-
-    $query ="SELECT * FROM users";
+    /*
+    *   Sprawdzimy czy w sesji zapisane są dane, jeśli nie to przekierowujemy do index.php
+    */
+    if (!isset($_SESSION['login'],$_SESSION['password'])) {
+        header('Location: ./');
+    } else {
+        // 
+    }
 ?>
 
 <!DOCTYPE html>
