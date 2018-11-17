@@ -31,12 +31,12 @@
                 }
     ?>
 
-    <p class="logout" style="color: red;">wylogować się</p>
+    <p id="logout">wylogować się</p>
 
     <script type="text/javascript">
-        var logout = document.querySelectorAll('.logout');
-        logout.click(function() {
-            <?php unset($_SESSION); ?>
+        var out = document.getElementById('logout');
+        out.click(function () {
+            alert("Hi");
         });
     </script>
 </body>

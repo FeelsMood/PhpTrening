@@ -11,7 +11,7 @@
     text-align: center;
 }
 
-.logout {
+#logout {
     color: red;
     background: #000;
 }
