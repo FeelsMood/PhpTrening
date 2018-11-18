@@ -31,13 +31,16 @@
                 }
     ?>
 
-    <p id="logout">wylogować się</p>
+    <form method="post" name="form">
+        <p><input name="submit" type="submit" value="Wylogować się"></p>
+    </form>
 
-    <script type="text/javascript">
-        var out = document.getElementById('logout');
-        out.click(function () {
-            alert("Hi");
-        });
-    </script>
+    <?php
+        if (isset($_POST['submit'])) {
+            unset($_SESSION['login']);
+            unset($_SESSION['password']);
+            header('Location: index.php');
+        }
+    ?>
 </body>
 </html>
