@@ -10,3 +10,13 @@
     width: 80px;
     text-align: center;
 }
+
+.users {
+    border: 1px solid #393939;
+    border-left: none;
+    border-right: none;
+}
+.adduser {
+    border-bottom: 1px solid #393939;
+    padding-bottom: 20px;
+}
