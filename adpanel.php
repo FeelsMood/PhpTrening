@@ -73,7 +73,7 @@
             $lname = $_POST['lname'];
             $email = $_POST['email'];
             $pass = $_POST['pass'];
-            $query = "INSERT INTO 'users'(`user_id`, `username`, `password`, `first_name`, `last_name`, `email`) VALUES (NULL, '$uname', '$pass','$fname', '$lname', '$email')";
+            $query = "INSERT INTO `users`(`user_id`, `username`, `password`, `first_name`, `last_name`, `email`) VALUES (NULL, '$uname', '$pass','$fname', '$lname', '$email')";
             $result = mysqli_query($link, $query);
             if($result) {
                 echo 'Done!';
