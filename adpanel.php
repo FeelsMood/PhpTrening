@@ -31,7 +31,7 @@
             $qid = mysqli_query($link, 'SELECT * FROM users');
             while($row = mysqli_fetch_assoc($qid)) {
                         print($row['username'])." - ";
-                        print($row['password']);
+                        print($row['password'])." <a href='adpanel.php?remove=".$row['user_id']."'>Usun</a> <br />";
                     }
         ?>
     </div>
@@ -78,6 +78,15 @@
             if($result) {
                 echo 'Done!';
             }
+        }
+        if(isset($_GET['remove'])) {
+            $host = 'localhost';
+            $database = 'Admin Panel';
+            $user = 'Admin';
+            $password = '123';
+            $link = mysqli_connect($host,$user,$password,$database) or die("Error " . mysqli_error($link));
+            $id = $_GET['user_id'];
+            $query = "DELETE FROM `users` WHERE id = $id";
         }
     ?>
 </body>
