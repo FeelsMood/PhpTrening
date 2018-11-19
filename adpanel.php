@@ -85,8 +85,9 @@
             $user = 'Admin';
             $password = '123';
             $link = mysqli_connect($host,$user,$password,$database) or die("Error " . mysqli_error($link));
-            $id = $_GET['user_id'];
-            $query = "DELETE FROM `users` WHERE id = $id";
+            $id = $_GET['remove'];
+            $query = "DELETE FROM `users` WHERE `user_id` = $id";
+            $result = mysqli_query($link, $query);
         }
     ?>
 </body>
