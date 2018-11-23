@@ -17,12 +17,12 @@ if( !empty($_REQUEST['password']) and !empty($_REQUEST['login']) ) {
 
         if( !empty($login) and !empty($password) ) {
 
-            $query = 'SELECT*FROM admins WHERE username="'.$login.'" AND password="'.$password.'"';
+            $query = 'SELECT*FROM users WHERE username="'.$login.'" AND password="'.$password.'"';
             $result = mysqli_query($link, $query);
             $user = mysqli_fetch_assoc($result);
 
             if (!empty($user)) {
-                header("Location: adpanel.php");
+                header("Location: profile.php");
 
                 /*
                 *   Tu sobie zrobimy wpis do sesji
@@ -46,13 +46,13 @@ if( !empty($_REQUEST['password']) and !empty($_REQUEST['login']) ) {
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <form method="POST" class="login">
-        <input name='login' placeholder="Login">
+    <form method="POST" class="login-user">
+        <h1>Login</h1>
+        <input type="text" name='login' placeholder="Login">
 		<input name='password' placeholder="Password" type='password'>
 		<input type='submit' value='Login' class="submit">
     </form>
-
-    <a href="log.php">nie jestem adminem</a>
+    <a href="reg.php">Nie mam konta</a>
 </body>
 </html>
 <?php
