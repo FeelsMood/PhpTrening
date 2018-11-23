@@ -21,7 +21,19 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    Your'e Profile <br /><br />
+    <div class="profile">
+        Your'e Profile <br /><br />
+        <img name="profimg" src="<?php echo $img;?>" alt="">
+    </div>
+
+
+    <?php
+        $img = $_POST['profimg'];
+        $query = 'SELECT*FROM `users` WHERE `prof`="'.$img.'"';
+        $result = mysqli_query($link, $query);
+        $user = mysqli_fetch_assoc($result);
+     ?>
+
 
 </body>
 </html>
